@@ -6,5 +6,13 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { configureStore } from './redux/store';
 
-ReactDOM.render(<Provider store={configureStore()}><App /></Provider>, document.getElementById('root'));
+const store = configureStore();
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
+
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    const UpdatedApp = require('./App').default;
+    ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+  });
+}
