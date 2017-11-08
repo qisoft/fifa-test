@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Loader.less';
 
-export const Loader = ({
+export default ({
                          small,
                          ...props
                        }) => (
