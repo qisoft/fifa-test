@@ -4,6 +4,7 @@ import { loadMatches } from './redux/actions';
 import SearchBar from './components/SearchBar';
 import Loader from './components/Loader';
 import ErrorMessage from './components/ErrorMessage';
+import MatchesList from './components/MatchesList';
 
 const mapStateToProps = ({ isLoading, matches, error }) => ({
   isLoading,
@@ -31,7 +32,7 @@ export default class Matches extends React.Component {
           ? <Loader />
           : error
             ? <ErrorMessage error={error} />
-            : <Matches matches={matches} />
+            : <MatchesList matches={matches} />
         }
       </div>
     );

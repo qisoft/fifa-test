@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import styles from './App.less';
 import Header from './components/Header';
+import Matches from './Matches';
 
 class App extends Component {
   render() {

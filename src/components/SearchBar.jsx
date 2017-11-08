@@ -8,7 +8,7 @@ export default class SearchBar extends Component {
   static get propTypes() {
     return {
       onSearch: PropTypes.func.isRequired,
-      isLoading: PropTypes.boolean,
+      isLoading: PropTypes.bool,
     }
   }
 

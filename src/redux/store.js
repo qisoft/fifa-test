@@ -3,12 +3,12 @@ import thunk from 'redux-thunk';
 import Immutable from 'seamless-immutable';
 import rootReducer from './reducers';
 
-export function configureStore(history, initialState) {
+export function configureStore(initialState) {
   const middlewares = [
     thunk,
   ];
 
-  const composeEnhancers = (appConfig.env !== 'production' &&
+  const composeEnhancers = (
     typeof window === 'object' &&
     // eslint-disable-next-line no-underscore-dangle
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
