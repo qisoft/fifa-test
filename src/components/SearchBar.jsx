@@ -26,11 +26,17 @@ export default class SearchBar extends Component {
     this.props.onSearch(this.state.query);
   };
 
+  onEnter = (e) => {
+    if (e.keyCode === 13) {
+      this.send();
+    }
+  };
+
   render() {
     const { isLoading } = this.props;
     return <div className={styles.container}>
-      <input value={this.state.query} onChange={this.onChange}/>
-      <button disabled={isLoading} onClick={this.send}>Find</button>
+      <input value={this.state.query} placeholder="Enter FIFA Code Here" onKeyUp={this.onEnter} onChange={this.onChange}/>
+      <button disabled={isLoading || !(this.state.query && this.state.query.length > 0) } onClick={this.send}>Search</button>
     </div>;
   }
 }

@@ -1,3 +1,22 @@
 .container {
   background-color: #cccccc;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  input {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+  }
+  button {
+    border: none;
+    background-color: #0275d8;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    &:disabled {
+      background-color: #777777;
+    }
+  }
 }

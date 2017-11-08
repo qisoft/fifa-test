@@ -31,8 +31,8 @@ export default class Matches extends React.Component {
         { isLoading
           ? <Loader />
           : error
-            ? <ErrorMessage error={error} />
-            : <MatchesList matches={matches} />
+            ? <ErrorMessage />
+            : matches && <MatchesList matches={matches} />
         }
       </div>
     );

@@ -4,12 +4,12 @@ import * as actions from './actions';
 
 const INITIAL_STATE = Immutable({
   isLoading: false,
-  matches: [],
+  matches: null,
   error: null,
 });
 
 export default createReducer(INITIAL_STATE, {
   [actions.UPDATE_MATCHES]: (s, a) => s.merge({ matches: a.matches, isLoading: false }),
   [actions.LOAD_MATCHES]: (s, a) => s.merge({ isLoading: true, error: null }),
-  [actions.LOAD_ERROR]: (s, a) => s.merge({ error: a.message, isLoading: false }),
+  [actions.LOAD_ERROR]: (s, a) => s.merge({ error: a.message, isLoading: false, matches: null }),
 });
